@@ -1,0 +1,524 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:untitled-ontology-7="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#hasDrug"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#hasSideEffect"/>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#hasSymptom"/>
+  <untitled-ontology-7:Disease rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Glaucoma">
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BlurredVision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Travatan">
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#IrisColorChange">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Alphagan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Azopt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Lumigan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Nausea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#PeripheralVision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Iopidine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vomitting">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#WateryEyes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+  </untitled-ontology-7:Disease>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SmallPox">
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fatigue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+        <untitled-ontology-7:hasDrug>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ibprofen">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasDrug>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RunningNose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SkinRash">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vaccination">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Gastricitis">
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Biopsy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#LossofApetite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Nausea"/>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vomitting"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+  </owl:NamedIndividual>
+  <untitled-ontology-7:Disease rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#CongenitalHeartDisease">
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Diuretics">
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Dehydration">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Antiarrhythenics">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ShortBreath">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vasodilator">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fatigue"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RapidHeartBeat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SwollenAbdomen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BlueSkin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Digoxin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+  </untitled-ontology-7:Disease>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Measles">
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough"/>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RedEyes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Rubella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RunningNose"/>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SkinRash"/>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Varicella">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Narcolepsy">
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Provigil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#DisturbedNightSleep">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Methylin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Trofanil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BlurredVision"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Hallucinations">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ExcessiveDaySleep">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vyvanse">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#DoubleVision">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Adderall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Tuberculosis">
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BackStiffness">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#FlankPain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Headache">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Isoniazid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Rifampin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Rifapentine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SpinalPain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+  </owl:NamedIndividual>
+  <untitled-ontology-7:Disease rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Asthma">
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Anxiety">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Wheezing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Flunisolide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Triamcinolone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ChestPain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Budesonide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever"/>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Salbutamol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Isoproterenol">
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Dizziness">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Headache"/>
+        <untitled-ontology-7:hasSideEffect>
+          <untitled-ontology-7:SideEffects rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Insomnia">
+            <untitled-ontology-7:hasDrug>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Lunesta">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasDrug>
+            <untitled-ontology-7:hasDrug>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Rozorem">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasDrug>
+            <untitled-ontology-7:hasDrug>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Silenor">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasDrug>
+            <untitled-ontology-7:hasSymptom>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Tiredness">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasSymptom>
+            <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Headache"/>
+            <untitled-ontology-7:hasDrug>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Sonata">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasDrug>
+            <untitled-ontology-7:hasDrug>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Ambien">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasDrug>
+            <untitled-ontology-7:hasSymptom>
+              <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Sleeplessness">
+                <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+              </owl:NamedIndividual>
+            </untitled-ontology-7:hasSymptom>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+          </untitled-ontology-7:SideEffects>
+        </untitled-ontology-7:hasSideEffect>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Mometasone">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever"/>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cold">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough"/>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#DryThroat">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ShortBreath"/>
+  </untitled-ontology-7:Disease>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Flu">
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Fever"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BodyAche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Diarhea">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cough"/>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Bayer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RunningNose"/>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SoreThroat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Ascripitin">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Nausea"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vomitting"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Tylenol">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Headache"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Nausea"/>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#StomachPain">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Anacin">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Nausea"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#StomachPain"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Tylenol"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#WateryEyes"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#RheumatoidArthritis">
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#JointPain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Auranofin">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Diarhea"/>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#MouthUlcer">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SkinRash"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#BodyAche"/>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cyclosporine">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Headache"/>
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Vomitting"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Leflunomide">
+        <untitled-ontology-7:hasSideEffect rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Dizziness"/>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#HairLoss">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <untitled-ontology-7:hasSideEffect>
+          <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#LowBP">
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#SideEffects"/>
+            <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+          </owl:NamedIndividual>
+        </untitled-ontology-7:hasSideEffect>
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Swelling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#JointInflamation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <untitled-ontology-7:hasSymptom>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#ReddishnessInJoints">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Symptom"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasSymptom>
+    <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Disease"/>
+    <untitled-ontology-7:hasDrug>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Azathipline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Drug"/>
+      </owl:NamedIndividual>
+    </untitled-ontology-7:hasDrug>
+  </owl:NamedIndividual>
+</rdf:RDF>
