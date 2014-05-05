@@ -3,6 +3,11 @@
 import java.io.*;
 import java.util.*;
 
+import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+import javax.swing.ListModel;
+
 import com.hp.hpl.jena.query.*;
 import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.util.FileManager;
@@ -10,7 +15,16 @@ import com.hp.hpl.jena.util.FileManager;
 
 public class  OwlReader {
 	String autuersBaseURI = "http://www.utdallas.edu/auteurs/";
-	
+	MainFrame mf;
+	boolean buttonPressed;
+	GUIThread gui;
+	public OwlReader()
+	{
+		buttonPressed = false;
+		
+		gui = new GUIThread(this);
+		new Thread(gui).start();
+	}
 
 	/**
 	 * Function to read the OWL File
@@ -145,15 +159,51 @@ public class  OwlReader {
 				System.out.println(DList.get(k).get(0));
 		}
 				
-		System.out.println("Did u have side effects with any of the drugs ?");
-		Scanner sc=new Scanner(System.in);
-		if(sc.nextLine().equalsIgnoreCase("yes"))
+		//System.out.println("Did u have side effects with any of the drugs ?");
+		gui.m.jLabel2.setText("Did u have side effects with any of the drugs ?");
+		gui.m.jTextArea1.setText("");
+		gui.m.jPanel5.setVisible(true);
+		//DefaultListModel listModel = (DefaultListModel) gui.m.jList1.getModel();
+		DefaultListModel test = new DefaultListModel();
+
+		for(int k=0;k<DList.size();k++)
+		{
+				test.addElement(DList.get(k).get(0));
+		}
+		gui.m.jList1.setModel(test);
+		gui.m.jList1.setEnabled(false);
+		//Scanner sc=new Scanner(System.in);
+		while(!buttonPressed)
+		{
+			System.out.print("");
+		}
+		//System.out.println("Button Pressed");
+		buttonPressed=false;
+		
+		if(gui.m.jTextArea1.getText().equalsIgnoreCase("yes"))
 		{	
 			String reply = "yes";
 			while(!reply.equalsIgnoreCase("no"))
 			{
-				System.out.println("Enter the drug and side effects you had : ");
-				String sideeffects=sc.nextLine(); /*Drug:Sideeeffects*/
+				//System.out.println("Choose the drug and side effects you had : ");
+				gui.m.jLabel2.setText("Choose the drug and side effects you had");
+				DefaultListModel test1 = new DefaultListModel();
+
+				for(int k=0;k<DList.size();k++)
+				{
+					if(!AllergicDrugs.contains(DList.get(k).get(0)))
+						test1.addElement(DList.get(k).get(0));
+				}
+				gui.m.jList1.setModel(test1);
+				gui.m.jList1.setEnabled(true);
+				gui.m.jTextArea1.setText("");
+				while(!buttonPressed)
+				{
+					System.out.print("");
+				}
+				//System.out.println("Button Pressed");
+				buttonPressed=false;
+				String sideeffects=gui.m.jTextArea1.getText(); /*Drug:Sideeeffects*/
 				
 				ArrayList<String> newSideEffects=LearningAgent(model,DList,sideeffects);
 				if(newSideEffects.size()>1)
@@ -161,21 +211,32 @@ public class  OwlReader {
 						extendModel(newSideEffects);
 				}
 				AllergicDrugs.add(newSideEffects.get(newSideEffects.size()-1));
-				System.out.println("Do you have more? ");
-				reply=sc.nextLine(); /*Drug:Sideeeffects*/
+				gui.m.jLabel2.setText("Do you have more? ");
+				gui.m.jTextArea1.setText("");
+				gui.m.jList1.setEnabled(false);
+				while(!buttonPressed)
+				{
+					System.out.print("");
+				}
+				//System.out.println("Button Pressed");
+				buttonPressed=false;
+				reply=gui.m.jTextArea1.getText(); /*Drug:Sideeeffects*/
 			}
 				
 		}
-		
-		System.out.println("you have the Disease "+ disease);
-		System.out.println("Suggested Prescription :");
+		String msg="";
+		msg+="You have "+ disease+"\n";
+		msg+="Suggested Prescription :\n";
 		
 		for(int k=0;k<DList.size();k++)
 		{
 			if(!AllergicDrugs.contains(DList.get(k).get(0)))
-			System.out.println(DList.get(k).get(0));
+			msg+=DList.get(k).get(0)+"\n";
 		}
-		sc.close();
+		
+		msg+="Take Care !!!";
+		JOptionPane.showMessageDialog(null,msg);
+	
 	}
 	
 	public static List<String> issueSPARQL_Diseases(String queryString, Model m) 
@@ -245,8 +306,17 @@ public class  OwlReader {
 		while(it.hasNext())
 		{
 			Map.Entry me = (Map.Entry)it.next();
+			gui.m.jLabel2.setText("Did you have "+me.getKey()+"?");
+			gui.m.jTextArea1.setText("");
 			System.out.println("Did you have "+me.getKey()+"?");
-			if(sc.nextLine().equalsIgnoreCase("yes"))
+			while(!buttonPressed)
+			{
+				System.out.print("");
+			}
+			//System.out.println("Button Pressed");
+			buttonPressed=false;
+			
+			if(gui.m.jTextArea1.getText().equalsIgnoreCase("yes"))
 			{
 				return me.getValue().toString();
 			}
@@ -402,8 +472,19 @@ public class  OwlReader {
 	{
 		String temp=null;
 		System.out.println("Hello Patient,May I know your Concerns\n");
-		Scanner sc=new Scanner(System.in);
-		temp=sc.nextLine();
+		gui.m.jLabel2.setText("Hello Patient,May I know your Concerns");
+		gui.m.jTextArea1.setText("");
+		//Scanner sc=new Scanner(System.in);
+		//temp=sc.nextLine();
+		//System.out.println(mf.buttonPressed);
+		while(!buttonPressed)
+		{
+			System.out.print("");
+		}
+		//System.out.println("Button Pressed");
+		buttonPressed=false;
+		
+		temp=gui.m.jTextArea1.getText();
 		List<String> symptoms = Arrays.asList(temp.split(","));
 		return symptoms;
 	}
@@ -415,4 +496,40 @@ public class  OwlReader {
         List<String> symptoms= or.getSymptomsFromPatients();
         or.queryModel(symptoms);
     }
+}
+
+
+class GUIThread implements Runnable
+{	
+	public MainFrame m;
+	public OwlReader parent;
+	boolean bp;
+
+	public GUIThread(OwlReader o)
+	{
+		bp = false;
+		parent = o;
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		m = new MainFrame(this);
+		m.setVisible(true);
+		m.jPanel5.setVisible(false);
+		new Thread(m).start();
+		while(true)
+		{
+			System.out.print("");
+			while(!bp)
+			{
+				System.out.print("");
+			}
+			//System.out.println("Thread");
+			parent.buttonPressed = true;
+			
+			bp = false;
+		}
+	}
+	
 }
