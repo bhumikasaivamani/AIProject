@@ -46,6 +46,44 @@ public class  OwlReader {
 		return model;
 	}
 	
+	public void extendModel_NewDisease(ArrayList<String> drugs,List<String> symptoms)
+	{
+		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
+		Model model = null;
+		InputStream in = null;
+		try 
+		{
+			in = new FileInputStream(new File("Ontology.owl"));
+			model = ModelFactory.createOntologyModel();
+			model.read(in,defaultNameSpace); 
+			in.close();
+	   } 
+	   catch (Exception e) 
+	   {
+          e.printStackTrace();
+       }
+		//String drug=newSideEffects.get(newSideEffects.size()-1);
+		String disease="";
+		for(int k=0;k<symptoms.size();k++)
+		{
+		disease=disease+symptoms.get(k);	
+		}
+		for(int i=0;i<drugs.size();i++)
+		{
+			String temp=defaultNameSpace+drugs.get(i);
+			Resource r1 =model.createResource(defaultNameSpace+disease)
+					.addProperty(model.createProperty(defaultNameSpace+"hasDrug"),model.createResource(temp));
+			writeModel("Ontology.owl", "RDF/XML-ABBREV", model);
+		}
+		
+		for(int i=0;i<symptoms.size();i++)
+		{
+			String temp=defaultNameSpace+symptoms.get(i);
+			Resource r2 =model.createResource(defaultNameSpace+disease)
+					.addProperty(model.createProperty(defaultNameSpace+"hasSymptom"),model.createResource(temp));
+			writeModel("Ontology.owl", "RDF/XML-ABBREV", model);
+		}
+	}
 
 	public void extendModel(ArrayList<String> newSideEffects)
 	{
@@ -55,7 +93,6 @@ public class  OwlReader {
 
 		try 
 		{
-
 			in = new FileInputStream(new File("Ontology.owl"));
 		    								// Create an empty in-memory model and populate it from the graph
 			model = ModelFactory.createOntologyModel();
@@ -64,7 +101,6 @@ public class  OwlReader {
 	   } 
 	   catch (Exception e) 
 	   {
-
           e.printStackTrace();
        }
 		String drug=newSideEffects.get(newSideEffects.size()-1);
@@ -131,9 +167,10 @@ public class  OwlReader {
 				
 		//System.out.println(queryStringDisease);
 		List<String> Diseases=issueSPARQL_Diseases(queryStringDisease, model);
-		
+		System.out.println(Diseases);
 		String disease = filterDisease(model, new ArrayList<>(Diseases));
-	
+		if(disease!=null)
+		{
 		/****************************************Getting Drugs*********************************************************/
 		
 		String dtemp="<"+defaultNameSpace+disease+">";
@@ -236,11 +273,41 @@ public class  OwlReader {
 		
 		msg+="Take Care !!!";
 		JOptionPane.showMessageDialog(null,msg);
+		}
+		else
+		{
+			//Only that symptom which is said by the user-no other symptoms are there
+			ArrayList<String> druglist=issueSPARQL_Diseases_WithNoCommonSymptom(model ,symptoms);
+			extendModel_NewDisease(druglist,symptoms);
+			JOptionPane.showMessageDialog(null,druglist);
+		}
+	}
 	
+	public static ArrayList<String> issueSPARQL_Diseases_WithNoCommonSymptom(Model m,List<String> symptoms)
+	{
+		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
+		String CuresNameSpace="<http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#Cures>";
+		
+		ArrayList<String> DrugList=new ArrayList<String>();
+		for(int i=0;i<symptoms.size();i++)
+		{
+			String ntemp="<"+defaultNameSpace+symptoms.get(i)+">";
+			String queryStringDisease ="SELECT ?Drug "+
+					"WHERE {  ?Drug "+CuresNameSpace+" " +ntemp + " ."  +
+					"   }";
+			List<String> temp=issueSPARQL_Diseases(queryStringDisease, m);
+			for(int j=0;j<temp.size();j++)
+			{
+				DrugList.add(temp.get(j));
+			}
+		}
+		System.out.println(DrugList);
+		return DrugList;
 	}
 	
 	public static List<String> issueSPARQL_Diseases(String queryString, Model m) 
 	{
+		//System.out.print(queryString);
 		Query query = QueryFactory.create(queryString);
         List<Integer> startindex=new ArrayList<Integer>();
         List<Integer> endindex=new ArrayList<Integer>();
@@ -279,7 +346,10 @@ public class  OwlReader {
 	public String filterDisease(Model m,ArrayList<String> Diseases)
 	{
 		if(Diseases.size()==1)
+		{
+			System.out.println("Test");
 			return Diseases.get(0);
+		}
 		if(Diseases.size()==0)
 			return null;
 		Scanner sc = new Scanner(System.in);
@@ -322,7 +392,7 @@ public class  OwlReader {
 			}
 		
 		}
-		return Diseases.get(0);
+		return null;
 	}
 	
 	public static ArrayList<String> getSymptoms(Model m,String disease)
