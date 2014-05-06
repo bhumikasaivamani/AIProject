@@ -13,8 +13,9 @@ import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.util.FileManager;
 
 
-public class  OwlReader {
-	String autuersBaseURI = "http://www.utdallas.edu/auteurs/";
+public class  OwlReader 
+{
+	
 	MainFrame mf;
 	boolean buttonPressed;
 	GUIThread gui;
@@ -33,8 +34,6 @@ public class  OwlReader {
 	public Model readOwlFile()
 	{
 		Model model = ModelFactory.createDefaultModel();
-
-		// use the FileManager to find the input file
 		InputStream in = FileManager.get().open( "Ontology.owl" );
 		if (in == null) {
 		    throw new IllegalArgumentException(
@@ -46,6 +45,11 @@ public class  OwlReader {
 		return model;
 	}
 	
+/**
+ * Function that adds new disease to the owl File.System keeps on learning new disease
+ * @param drugs
+ * @param symptoms
+ */
 	public void extendModel_NewDisease(ArrayList<String> drugs,List<String> symptoms)
 	{
 		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
@@ -85,6 +89,10 @@ public class  OwlReader {
 		}
 	}
 
+	/**
+	 * Function that adds new side effects to the owl file
+	 * @param newSideEffects
+	 */
 	public void extendModel(ArrayList<String> newSideEffects)
 	{
 		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
@@ -94,9 +102,8 @@ public class  OwlReader {
 		try 
 		{
 			in = new FileInputStream(new File("Ontology.owl"));
-		    								// Create an empty in-memory model and populate it from the graph
-			model = ModelFactory.createOntologyModel();
-			model.read(in,defaultNameSpace); // null base URI, since model URIs are absolute
+		    model = ModelFactory.createOntologyModel();
+			model.read(in,defaultNameSpace); 
 			in.close();
 	   } 
 	   catch (Exception e) 
@@ -113,7 +120,12 @@ public class  OwlReader {
 		}
 	}
 		
-	
+	/**
+	 * Function that writes the model in to File
+	 * @param fileName
+	 * @param format
+	 * @param m
+	 */
 	public void writeModel(String fileName, String format, Model m)
 	{
 		try
@@ -128,7 +140,10 @@ public class  OwlReader {
 		}
 	}
 	
-	
+	/**
+	 * Function that gets symptoms from the user and gives drug list and disease as output.Calls several other functions.
+	 * @param symptoms
+	 */
 	void queryModel(List<String> symptoms)
 	{
 
@@ -142,11 +157,9 @@ public class  OwlReader {
 		String temp ="";
 		try 
 		{
-
 			in = new FileInputStream(new File("Ontology.owl"));
-			// Create an empty in-memory model and populate it from the graph
 			model = ModelFactory.createOntologyModel();
-			model.read(in,defaultNameSpace); // null base URI, since model URIs are absolute
+			model.read(in,defaultNameSpace); 
 			in.close();
 		} 
 		catch (Exception e) 
@@ -156,6 +169,7 @@ public class  OwlReader {
 		}
 
 		/****************************************Getting Diseases*********************************************************/
+		
 		for(int i=0;i<symptoms.size();i++)
 		{
 			String ntemp="<"+defaultNameSpace+symptoms.get(i)+">";
@@ -171,6 +185,8 @@ public class  OwlReader {
 		String disease = filterDisease(model, new ArrayList<>(Diseases));
 		if(disease!=null)
 		{
+		
+		
 		/****************************************Getting Drugs*********************************************************/
 		
 		String dtemp="<"+defaultNameSpace+disease+">";
@@ -178,7 +194,6 @@ public class  OwlReader {
 		"SELECT ?Drug " +
 				"WHERE {" +
 				"     " +dtemp+ " <http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#hasDrug>  ?Drug ." +
-				//+" ?sub ?pred ?obj "+
 				"      }";
 		
 		//System.out.println(queryStringDrug);
@@ -200,7 +215,6 @@ public class  OwlReader {
 		gui.m.jLabel2.setText("Did u have side effects with any of the drugs ?");
 		gui.m.jTextArea1.setText("");
 		gui.m.jPanel5.setVisible(true);
-		//DefaultListModel listModel = (DefaultListModel) gui.m.jList1.getModel();
 		DefaultListModel test = new DefaultListModel();
 
 		for(int k=0;k<DList.size();k++)
@@ -276,13 +290,26 @@ public class  OwlReader {
 		}
 		else
 		{
+			String msg="";
+			msg+="Suggested Prescription :\n";
 			//Only that symptom which is said by the user-no other symptoms are there
 			ArrayList<String> druglist=issueSPARQL_Diseases_WithNoCommonSymptom(model ,symptoms);
+			for(int k=0;k<druglist.size();k++)
+			{
+			msg+=druglist.get(k)+"\n";
+			}
 			extendModel_NewDisease(druglist,symptoms);
-			JOptionPane.showMessageDialog(null,druglist);
+			msg+="Take Care !!!";
+			JOptionPane.showMessageDialog(null,msg);
 		}
 	}
 	
+	/**
+	 * Function that retrieves drugs for individual symptoms if no other disease matches with given set of symptoms
+	 * @param m
+	 * @param symptoms
+	 * @return
+	 */
 	public static ArrayList<String> issueSPARQL_Diseases_WithNoCommonSymptom(Model m,List<String> symptoms)
 	{
 		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
@@ -305,6 +332,12 @@ public class  OwlReader {
 		return DrugList;
 	}
 	
+	/**
+	 * Function that retrieves a set of diseases fromowl file given a set of symptoms
+	 * @param queryString
+	 * @param m
+	 * @return
+	 */
 	public static List<String> issueSPARQL_Diseases(String queryString, Model m) 
 	{
 		//System.out.print(queryString);
@@ -341,7 +374,12 @@ public class  OwlReader {
 		return ExtractedDiseaseList;
     }
 
-
+/**
+ * Given a set of diseases ,this function queries user with unique set of symptoms and choses the appropriate disease
+ * @param m
+ * @param Diseases
+ * @return
+ */
 	
 	public String filterDisease(Model m,ArrayList<String> Diseases)
 	{
@@ -395,6 +433,12 @@ public class  OwlReader {
 		return null;
 	}
 	
+	/**
+	 * Function to get symptoms given the disease
+	 * @param m
+	 * @param disease
+	 * @return
+	 */
 	public static ArrayList<String> getSymptoms(Model m,String disease)
 	{
 		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
@@ -436,7 +480,12 @@ public class  OwlReader {
 		
 	}
 
-	
+	/**
+	 * Given a disease in query string,This methos retrieves the drugs associated with that disease
+	 * @param queryString
+	 * @param m
+	 * @return
+	 */
 	public static ArrayList<String> issueSPARQLDrug(String queryString,Model m)
 	{
 		Query query = QueryFactory.create(queryString);
@@ -469,6 +518,12 @@ public class  OwlReader {
 		return ExtractedDrugList;
 	}
 	
+	/**
+	 * Given a disease this methos retrieves the side effects associated with that disease
+	 * @param m
+	 * @param drug
+	 * @return
+	 */
 	public static ArrayList<String> getSideeffects(Model m,String drug)
 	{
 		String defaultNameSpace = "http://www.semanticweb.org/bhumika/ontologies/2014/3/untitled-ontology-7#";
@@ -509,6 +564,13 @@ public class  OwlReader {
 		return ExtractedsideeffectList;
 	}
 	
+	/**
+	 * Adds new side effects which the system learnt from the user input
+	 * @param m
+	 * @param DrugAndSideeffects
+	 * @param sideeffects
+	 * @return
+	 */
 	public static ArrayList<String> LearningAgent(Model m,ArrayList<ArrayList<String>> DrugAndSideeffects,String sideeffects)
 	{
 		ArrayList<String> ExistingSideEffects=new ArrayList<String>();
@@ -538,6 +600,10 @@ public class  OwlReader {
 		return newSideeffects;
 	}
 	
+	/**
+	 * Function to get initial set of input from the patient - symptoms
+	 * @return
+	 */
 	public List<String> getSymptomsFromPatients()
 	{
 		String temp=null;
@@ -597,7 +663,6 @@ class GUIThread implements Runnable
 			}
 			//System.out.println("Thread");
 			parent.buttonPressed = true;
-			
 			bp = false;
 		}
 	}

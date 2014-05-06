@@ -522,6 +522,7 @@
 
     <owl:NamedIndividual rdf:about="&untitled-ontology-7;Flunisolide">
         <rdf:type rdf:resource="&untitled-ontology-7;Drug"/>
+        <hasSideEffect rdf:resource="&untitled-ontology-7;StomachPain"/>
     </owl:NamedIndividual>
     
 

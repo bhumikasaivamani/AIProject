@@ -71,7 +71,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
                 .addContainerGap())
         );
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("WELCOME");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -210,7 +210,7 @@ public class MainFrame extends javax.swing.JFrame implements Runnable {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
         //String text=jTextArea1.getText();
-    	System.out.println("BP");
+    	//System.out.println("BP");
     	buttonPressed = true;
     	
     }                                        
